@@ -1,14 +1,16 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
 
-class NotesWidget extends StatelessWidget {
-  const NotesWidget({Key? key}) : super(key: key);
+class NotesScreenWidget extends StatelessWidget {
+  const NotesScreenWidget({Key? key}) : super(key: key);
+
+  static const String _title = 'Notes';
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Center(
-        child: Text('Notes'),
-      ),
-    );
+    return const CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text(_title),
+        ),
+        child: Center(child: Text('Notes Page')));
   }
 }

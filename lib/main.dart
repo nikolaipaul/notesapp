@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:quicknote/screens/groups_screen.dart';
+import 'package:quicknote/screens/notes_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       title: _title,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''),
+      ],
       home: HomeScreenWidget(),
     );
   }
@@ -36,18 +47,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
               icon: Icon(CupertinoIcons.doc_text), label: 'Notes')
         ]),
         tabBuilder: (context, index) => CupertinoTabView(
-              builder: (context) => CupertinoPageScaffold(
-                  navigationBar: CupertinoNavigationBar(
-                      middle: index == 0
-                          ? const Text('Groups')
-                          : const Text('Notes')),
-                  child: Center(
-                      child: Text(
-                    'Tab at index $index',
-                    style: CupertinoTheme.of(context)
-                        .textTheme
-                        .navLargeTitleTextStyle,
-                  ))),
-            ));
+            builder: (context) => index == 0
+                ? const GroupsScreenWidget()
+                : const NotesScreenWidget()));
   }
 }

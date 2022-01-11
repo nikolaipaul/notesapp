@@ -1,0 +1,10 @@
+{
+    "app": "Quicknote",
+    "@app": {
+        "description": "The name of the app"
+    },
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    }
+}
