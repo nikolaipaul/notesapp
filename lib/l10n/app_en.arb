@@ -1,10 +1,11 @@
 {
-    "app": "Quicknote",
-    "@app": {
-        "description": "The name of the app"
+    "@@locale": "en",
+    "groups": "Groups",
+    "@groups": {
+        "description": "The tab title of groups tab"
     },
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
+    "notes": "Notes",
+    "@notes": {
+        "description": "The tab title of notes tab"
     }
 }
